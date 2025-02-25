@@ -102,6 +102,7 @@ header::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 30%;
   transition: filter 0.3s ease;
 }
 
@@ -116,18 +117,27 @@ header::after {
   }
 }
 
+/* Name with background highlight */
 header h1 {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1rem;
   letter-spacing: -1px;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #ffffff, #cccccc);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+  color: white;
   animation: fadeInUp 0.8s ease forwards;
+  padding: 0.2em 0.4em;
+  background-color: rgba(51, 51, 51, 0.7);
+  /* Remove the gradient text background and transparent text */
+  -webkit-text-fill-color: initial;
+  text-fill-color: initial;
+}
+
+/* Remove the underline completely by setting this rule to empty */
+header h1::after {
+  display: none;
 }
 
 header p {
@@ -144,7 +154,7 @@ header p {
   gap: 1.5rem;
   margin-top: 1.5rem;
   animation: fadeInUp 0.8s ease 0.4s forwards;
-  opacity: 0;
+  opacity: 1;
 }
 
 .social-icon {
@@ -158,7 +168,11 @@ header p {
   color: white;
   font-size: 1.2rem;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.social-icon i {
+  display: inline-block;
 }
 
 .social-icon:hover {
@@ -168,8 +182,8 @@ header p {
 }
 
 nav {
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0;
   display: flex;
   gap: 2rem;
   justify-content: center;
@@ -226,15 +240,7 @@ nav a::after {
 }
 
 .scroll-indicator {
-  position: absolute;
-  bottom: 5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: fadeInUp 0.8s ease 1s forwards, bounce 2s infinite 2s;
-  opacity: 0;
+  display: none;
 }
 
 .scroll-indicator span {
@@ -417,6 +423,12 @@ nav a::after {
 }
 
 /* Responsive adjustments */
+@media (max-width: 1200px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   header {
     padding: 6rem 1.5rem;
@@ -439,6 +451,14 @@ nav a::after {
   .profile-image-container {
     width: 280px;
     height: 280px;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  .profile-container {
+    gap: 2rem;
   }
 }
 

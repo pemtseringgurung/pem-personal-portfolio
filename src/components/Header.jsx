@@ -10,13 +10,13 @@ const Header = () => {
                         <img src={profileImage} alt="Pem Tsering Gurung" className="profile-image" />
                     </div>
                     <div className="text-content">
-                        <h1>Pem Tsering Gurung</h1>
+                        <h1>Pem Tsering Gurung.</h1>
                         <p>Hello, I am Pem Tsering Gurung. I am currently a Junior at the College of Wooster majoring in Computer Science.</p>
                         <div className="social-links">
-                            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-icon">
+                            <a href="https://github.com/pemtseringgurung" target="_blank" rel="noopener noreferrer" className="social-icon">
                                 <i className="fab fa-github"></i>
                             </a>
-                            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="social-icon">
+                            <a href="https://www.linkedin.com/in/pemgurung" target="_blank" rel="noopener noreferrer" className="social-icon">
                                 <i className="fab fa-linkedin"></i>
                             </a>
                             <a href="mailto:your.email@example.com" className="social-icon">
