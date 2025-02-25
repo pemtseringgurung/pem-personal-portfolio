@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import profileImage from '../assets/picture.png'; // Add your photo to assets folder
 
 const Header = () => {
+    const headerRef = useRef(null);
+
+    useEffect(() => {
+        const header = headerRef.current;
+        if (header) {
+            setTimeout(() => {
+                header.classList.add('animated');
+            }, 500);
+        }
+    }, []);
+
     return (
-        <header>
+        <header ref={headerRef}>
             <div className="header-content">
                 <div className="profile-container">
                     <div className="profile-image-container">
